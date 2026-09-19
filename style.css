@@ -263,6 +263,13 @@ nav a:hover {
     color: var(--accent);
 }
 
+.nav-buttons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: 15px;
+}
+
 /* HERO */
 .hero {
     position: relative;
@@ -811,6 +818,19 @@ footer {
         flex-direction: column;
         gap: 20px;
         text-align: center;
+    }
+    .nav-buttons {
+        flex-direction: column;
+        width: 100%;
+        margin-left: 0;
+        gap: 12px;
+        padding: 0 20px;
+    }
+    .nav-buttons .btn-whatsapp,
+    .nav-buttons .btn-primary {
+        width: 100%;
+        text-align: center;
+        justify-content: center;
     }
     .brand-title {
         font-size: 1.2rem;

@@ -1,4 +1,4 @@
-﻿document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", () => {
   // 1. Header scroll effect
   const header = document.getElementById("header");
   window.addEventListener("scroll", () => {
@@ -66,6 +66,15 @@
     "15:00", "15:30", "16:00", "16:30", "17:00", "17:30", "18:00"
   ];
 
+  function normalizarHora(horaStr) {
+    if (!horaStr) return "";
+    const match = String(horaStr).match(/(\d{1,2}):(\d{2})/);
+    if (match) {
+      return `${match[1].padStart(2, "0")}:${match[2]}`;
+    }
+    return String(horaStr).trim();
+  }
+
   function carregarHorarios() {
     const dataVal = inputData ? inputData.value : "";
     if (!dataVal) {
@@ -82,29 +91,29 @@
     fetch(`${scriptURL}?data=${dataVal}`)
       .then((res) => res.json())
       .then((dados) => {
+        console.log("Resposta da agenda para a data", dataVal, ":", dados);
         let ocupados = [];
         if (Array.isArray(dados)) {
           ocupados = dados
             .filter((item) => {
               if (typeof item === "object" && item !== null) {
                 const status = String(item.Status || "").trim().toUpperCase();
-                return status === "OK" || status === "PENDENTE" || status === "";
+                // Considera bloqueado se for OK, CONFIRMADO, APROVADO ou SIM
+                return status === "OK" || status === "CONFIRMADO" || status === "APROVADO" || status === "SIM";
               }
               return true;
             })
             .map((item) => {
-              if (typeof item === "object" && item !== null) {
-                return String(item.Horario || "").trim();
-              }
-              return String(item).trim();
+              const h = typeof item === "object" && item !== null ? item.Horario : item;
+              return normalizarHora(h);
             });
         }
 
+        console.log("Horários ocupados normalizados:", ocupados);
         renderizarBotoesHorarios(ocupados);
       })
       .catch((err) => {
         console.warn("Consulta offline ou erro na API:", err);
-        // Em caso de erro na consulta, disponibiliza a grade padrão
         renderizarBotoesHorarios([]);
       });
   }
@@ -121,7 +130,7 @@
       if (ocupados.includes(h)) {
         btn.classList.add("ocupado");
         btn.disabled = true;
-        btn.title = "Horário indisponível";
+        btn.title = "Horário já reservado";
       } else {
         btn.addEventListener("click", () => {
           document.querySelectorAll(".horario-btn").forEach((b) => b.classList.remove("selecionado"));

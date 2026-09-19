@@ -1,288 +1,348 @@
 ﻿<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Malu Araújo | Massoterapia e Bem-estar em São Paulo</title>
-<meta name="description" content="Massoterapia e bem-estar em São Paulo. Massagem relaxante, pedras quentes, ventosaterapia, drenagem linfática, reflexologia podal e spa de mãos e pés.">
-<meta name="keywords" content="massoterapia sp, massagem relaxante são paulo, drenagem linfática, pedras quentes, ventosaterapia, reflexologia podal">
-<meta property="og:title" content="Malu Araújo | Massoterapia e Bem-estar em São Paulo">
-<meta property="og:description" content="Cuidado que acolhe, toque que transforma. Restaure o equilíbrio do seu corpo com terapias personalizadas.">
-<meta property="og:type" content="website">
-<meta property="og:image" content="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&w=800&q=80">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "HealthAndBeautyBusiness",
-  "name": "Malu Araújo Massoterapia",
-  "image": "https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&w=800&q=80",
-  "telephone": "+5511977600003",
-  "priceRange": "$$",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "São Paulo",
-    "addressRegion": "SP",
-    "addressCountry": "BR"
-  },
-  "description": "Especialista em massoterapia, oferecendo massagem relaxante, ventosaterapia, pedras quentes, reflexologia e drenagem linfática em São Paulo."
-}
-</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO: Meta Title e Description -->
+    <title>Malu Araújo | Massoterapia e Bem-Estar em São Paulo</title>
+    <meta name="description" content="Malu Araújo oferece serviços de Massoterapia em São Paulo: Massagem Relaxante, Pedras Quentes, Ventosaterapia e Drenagem Linfática. Agende seu momento!">
+    
+    <!-- SEO: Canonical URL (Evita conteúdo duplicado) -->
+    <link rel="canonical" href="https://maluaraujomassoterapia.netlify.app/" />
+    
+    <!-- Favicon -->
+    <link rel="icon" href="https://i.postimg.cc/BvHQ9kBK/Chat-GPT-Image-3-de-set-de-2026-05-36-26.png" type="image/jpeg">
+
+    <!-- SEO: Open Graph para Redes Sociais (WhatsApp, Instagram, etc) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Malu Araújo | Massoterapia e Bem-estar" />
+    <meta property="og:description" content="Renove suas energias com Massagem Relaxante, Pedras Quentes e Drenagem Linfática. Atendimento especializado focado no seu bem-estar." />
+    <meta property="og:url" content="https://maluaraujomassoterapia.netlify.app/" />
+    <meta property="og:image" content="https://i.postimg.cc/BvHQ9kBK/Chat-GPT-Image-3-de-set-de-2026-05-36-26.png" />
+
+    <!-- Google Fonts & FontAwesome -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- SEO: Schema Markup para Negócios Locais -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HealthAndBeautyBusiness",
+      "name": "Malu Araújo Massoterapia",
+      "image": "https://i.postimg.cc/BvHQ9kBK/Chat-GPT-Image-3-de-set-de-2026-05-36-26.png",
+      "url": "https://maluaraujomassoterapia.netlify.app/",
+      "telephone": "+5511977600003",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "São Paulo",
+        "addressRegion": "SP",
+        "addressCountry": "BR"
+      },
+      "description": "Especialista em massoterapia, oferecendo massagem relaxante, ventosaterapia, pedras quentes e drenagem linfática."
+    }
+    </script>
 </head>
 <body>
+    <!-- Header / Navigation -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <a href="#home">
+                    <!-- SEO: Trocado H1 por DIV aqui para usar o H1 na frase principal da página -->
+                    <div class="logo-text">MA</div>
+                    <div class="logo-brand">
+                        <span class="brand-title">Malu Araújo</span>
+                        <span class="brand-sub">Conforto e bem-estar</span>
+                    </div>
+                </a>
+            </div>
+            
+            <button class="menu-toggle" id="mobile-menu-btn" aria-label="Abrir Menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
 
-<header class="header" id="header">
-  <div class="container header-inner">
-    <a href="#home" class="logo">
-      <span class="logo-icon">MA</span>
-      <span class="logo-text">Malu Araújo<br><small>Conforto e bem-estar</small></span>
+            <nav class="main-nav" id="main-nav">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#servicos">Serviços</a></li>
+                    <li><a href="#pacotes">Pacotes</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                    <li class="mobile-only" style="margin-top: 10px;">
+                        <a href="https://wa.me/5511977600003" target="_blank" class="btn-primary">Agendar Sessão</a>
+                    </li>
+                </ul>
+            </nav>
+            <a href="https://wa.me/5511977600003" target="_blank" class="btn-primary desktop-only">Agendar Sessão</a>
+        </div>
+    </header>
+
+    <main class="page-content">
+
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="hero-overlay"></div>
+            <div class="container hero-content">
+                <!-- SEO: Único H1 da página contendo palavras-chave fortes -->
+                <h1 class="hero-title">Massoterapia e Bem-estar<br>em São Paulo</h1>
+                <p class="hero-subtitle">Cuidado que acolhe, toque que transforma. Restaure o equilíbrio<br>do seu corpo com terapias personalizadas.</p>
+                <a href="https://wa.me/5511977600003" target="_blank" class="btn-light">Agende seu momento</a>
+            </div>
+        </section>
+
+        <!-- Sobre Section -->
+        <section id="sobre" class="sobre">
+            <div class="container sobre-container">
+                <div class="sobre-img">
+                    <!-- SEO: Atributo 'loading="lazy"' adicionado e 'alt' otimizado -->
+                    <img src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&w=800&q=80" alt="Malu Araújo aplicando massagem relaxante focada em bem-estar" loading="lazy">
+                    <div class="badge">Sinta-se<br>em casa</div>
+                </div>
+                <div class="sobre-text">
+                    <span class="subtitle">PRAZER EM CUIDAR DE VOCÊ</span>
+                    <h2>Olá! Sou a Malu.</h2>
+                    <p>Encontrei minha paixão em cuidar do corpo e da mente através do toque.</p>
+                    <p>Para mim, a massoterapia vai muito além da técnica; é sobre conexão, cuidado e restauração do seu bem-estar. Cada sessão que realizo carrega minha dedicação para que você se sinta renovada(o).</p>
+                    <p>Explore meus serviços, sinta-se em casa e agende seu momento. Vamos renovar suas energias!</p>
+                    
+                    <div class="signature">
+                        <p>Com carinho,</p>
+                        <h3>Malu Araújo</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Serviços Section -->
+        <section id="servicos" class="servicos bg-light">
+            <div class="container">
+                <div class="section-header">
+                    <span class="subtitle">NOSSOS SERVIÇOS</span>
+                    <h2>Massagens & Terapias</h2>
+                    <p>Cada toque é um convite para desacelerar e se reconectar com você mesma.</p>
+                </div>
+
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-header">
+                            <h3>Massagem Relaxante</h3>
+                            <span class="price">R$ 100</span>
+                        </div>
+                        <p class="service-desc"><strong>O Serviço:</strong> Movimentos suaves, contínuos e rítmicos, com óleos essenciais, para promover um relaxamento profundo do corpo e da mente.<br><br><strong>Ideal para:</strong> Adeus ao estresse, à ansiedade e à tensão do dia a dia. Perfeita para acalmar a mente e melhorar a qualidade do sono.</p>
+                        <div class="service-footer">
+                            <a href="https://wa.me/5511977600003?text=Olá,%20gostaria%20de%20agendar%20uma%20Massagem%20Relaxante" target="_blank" class="btn-outline">Agendar <i class="fa-brands fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-header">
+                            <h3>Pedras Quentes</h3>
+                            <span class="price">R$ 100</span>
+                        </div>
+                        <p class="service-desc"><strong>O Serviço:</strong> Terapia com pedras vulcânicas aquecidas deslizando sobre o corpo. O calor penetra profundamente nos tecidos.<br><br><strong>Ideal para:</strong> Alivia dores crônicas, nós de tensão profunda e rigidez muscular. O calor relaxa e renova o corpo de forma imediata.</p>
+                        <div class="service-footer">
+                            <a href="https://wa.me/5511977600003?text=Olá,%20gostaria%20de%20agendar%20uma%20Massagem%20com%20Pedras%20Quentes" target="_blank" class="btn-outline">Agendar <i class="fa-brands fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-header">
+                            <h3>Ventosaterapia</h3>
+                            <span class="price">R$ 100</span>
+                        </div>
+                        <p class="service-desc"><strong>O Serviço:</strong> Técnica com ventosas que criam sucção na pele, estimulando a circulação sanguínea e liberando toxinas acumuladas.<br><br><strong>Ideal para:</strong> Combate dores musculares intensas, má circulação e fadiga. Renova a energia e solta a musculatura travada.</p>
+                        <div class="service-footer">
+                            <a href="https://wa.me/5511977600003?text=Olá,%20gostaria%20de%20agendar%20uma%20sessão%20de%20Ventosaterapia" target="_blank" class="btn-outline">Agendar <i class="fa-brands fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-header">
+                            <h3>Drenagem Linfática</h3>
+                            <span class="price">R$ 120</span>
+                        </div>
+                        <p class="service-desc"><strong>O Serviço:</strong> Movimentos suaves e precisos que estimulam o sistema linfático, auxiliando o corpo a eliminar toxinas e líquidos retidos.<br><br><strong>Ideal para:</strong> Fim do inchaço, da retenção de líquidos e da sensação de peso. Excelente no pós-operatório e para trazer leveza.</p>
+                        <div class="service-footer">
+                            <a href="https://wa.me/5511977600003?text=Olá,%20gostaria%20de%20agendar%20uma%20Drenagem%20Linfática" target="_blank" class="btn-outline">Agendar <i class="fa-brands fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-header">
+                            <h3>Reflexologia Podal</h3>
+                            <span class="price">R$ 120</span>
+                        </div>
+                        <p class="service-desc"><strong>O Serviço:</strong> Massagem focada nos pés que estimula pontos de pressão conectados a todos os órgãos e sistemas do corpo, promovendo equilíbrio.<br><br><strong>Ideal para:</strong> Reduz o estresse global, desequilíbrios do corpo e cansaço extremo. Traz aterramento e bem-estar.</p>
+                        <div class="service-footer">
+                            <a href="https://wa.me/5511977600003?text=Olá,%20gostaria%20de%20agendar%20uma%20Reflexologia%20Podal" target="_blank" class="btn-outline">Agendar <i class="fa-brands fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card has-badge">
+                        <div class="card-badge">Spa</div>
+                        <div class="service-header">
+                            <h3>Spa Mãos e Pés</h3>
+                            <span class="price">R$ 80</span>
+                        </div>
+                        <p class="service-desc"><strong>O Serviço:</strong> Cuidado extremo das mãos e pés. Inclui escalda-pés, esfoliação, hidratação profunda e massagem para aliviar a fadiga.<br><br><strong>Ideal para:</strong> Alivia o cansaço das extremidades, melhora a textura da pele e proporciona um relaxamento reconfortante.</p>
+                        <div class="service-footer">
+                            <a href="https://wa.me/5511977600003?text=Olá,%20gostaria%20de%20agendar%20um%20Spa%20Mãos%20e%20Pés" target="_blank" class="btn-outline">Agendar <i class="fa-brands fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pacotes Section -->
+        <section id="pacotes" class="pacotes">
+            <div class="container">
+                <div class="section-header">
+                    <span class="subtitle">CUIDE-SE COM REGULARIDADE</span>
+                    <h2>Pacotes Promocionais</h2>
+                    <p>O melhor investimento é cuidar de você. Constância é o segredo para resultados duradouros.</p>
+                </div>
+                
+                <div class="packages-container">
+                    <div class="package-item">
+                        <div class="pkg-info">
+                            <h4>3 Sessões</h4>
+                            <p>Massagem Relaxante + Ventosa</p>
+                        </div>
+                        <div class="pkg-price">R$ 250,00</div>
+                    </div>
+                    
+                    <div class="package-item">
+                        <div class="pkg-info">
+                            <h4>3 Sessões</h4>
+                            <p>Reflexologia ou Drenagem</p>
+                        </div>
+                        <div class="pkg-price">R$ 300,00</div>
+                    </div>
+                    
+                    <div class="package-item">
+                        <div class="pkg-info">
+                            <h4>5 Sessões</h4>
+                            <p>Reflexologia ou Drenagem</p>
+                        </div>
+                        <div class="pkg-price">R$ 450,00</div>
+                    </div>
+                    
+                    <div class="package-item">
+                        <div class="pkg-info">
+                            <h4>8 Sessões</h4>
+                            <p>Reflexologia ou Drenagem</p>
+                        </div>
+                        <div class="pkg-price">R$ 700,00</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contato Section -->
+        <section id="contato" class="contato bg-light">
+            <div class="container contato-container">
+                <div class="contato-box" style="max-width: 800px; margin: 0 auto;">
+                    <div class="contato-info" style="text-align: center;">
+                        <i class="fa-solid fa-spa contact-icon"></i>
+                        <h2>Seu bem-estar merece prioridade.</h2>
+                        <p>Agende sua sessão diretamente pelo WhatsApp. Ficaremos felizes em esclarecer dúvidas e encontrar o melhor horário na sua rotina.</p>
+                        
+                        <div style="display: flex; flex-direction: column; align-items: center; gap: 20px; margin-bottom: 35px; margin-top: 30px;">
+                            <div class="info-item" style="margin-bottom: 0; text-align: center; width: 100%;">
+                                <i class="fa-solid fa-location-dot"></i>
+                                <div>
+                                    <h4>Endereço de Atendimento</h4>
+                                    <p>São Paulo e Região<br><em>(Consulte áreas de cobertura)</em></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div style="max-width: 400px; margin: 0 auto;">
+                            <a href="https://wa.me/5511977600003" target="_blank" class="btn-primary btn-full">
+                                <i class="fa-brands fa-whatsapp"></i> Falar com a Malu (11) 97760-0003
+                            </a>
+                            <a href="https://www.instagram.com/malu.araujo_massoterapia/" target="_blank" class="btn-light btn-full" style="border: 2px solid var(--primary-color);">
+                                <i class="fa-brands fa-instagram"></i> @malu.araujo_massoterapia
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#servicos">Serviços</a></li>
+                    <li><a href="#pacotes">Pacotes</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-container">
+                <div class="footer-brand">
+                    <!-- SEO: Subtítulo H2 semântico para a marca -->
+                    <h2>Malu Araújo</h2>
+                    <p>Massoterapia & Bem-estar</p>
+                </div>
+                <div class="footer-social">
+                    <a href="https://www.instagram.com/malu.araujo_massoterapia/" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://wa.me/5511977600003" target="_blank" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
+                <div class="footer-copy">
+                    <p>&copy; 2026 Malu Araújo. Todos os direitos reservados.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp -->
+    <a href="https://wa.me/5511977600003" target="_blank" class="whatsapp-float" aria-label="Fale conosco no WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
     </a>
 
-    <nav class="nav" id="nav">
-      <ul>
-        <li><a href="#home" class="nav-link">Home</a></li>
-        <li><a href="#sobre" class="nav-link">Sobre</a></li>
-        <li><a href="#servicos" class="nav-link">Serviços</a></li>
-        <li><a href="#pacotes" class="nav-link">Pacotes</a></li>
-        <li><a href="#agendamento" class="nav-link">Agendar</a></li>
-        <li><a href="#contato" class="nav-link">Contato</a></li>
-      </ul>
-    </nav>
+    <!-- Scripts (Menu Mobile & Smooth Scroll behavior fix for fixed header) -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const btn = document.getElementById('mobile-menu-btn');
+            const nav = document.getElementById('main-nav');
+            const navLinks = nav.querySelectorAll('a');
+            
+            // Toggle Menu
+            btn.addEventListener('click', () => {
+                nav.classList.toggle('active');
+                const icon = btn.querySelector('i');
+                if(nav.classList.contains('active')) {
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-xmark');
+                } else {
+                    icon.classList.remove('fa-xmark');
+                    icon.classList.add('fa-bars');
+                }
+            });
 
-    <a href="#agendamento" class="btn btn-primary btn-header">Agendar Sessão</a>
-
-    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-</header>
-
-<main>
-
-  <section class="hero" id="home">
-    <div class="container hero-grid">
-      <div class="hero-text">
-        <h1>Massoterapia e Bem-estar em São Paulo</h1>
-        <p>Cuidado que acolhe, toque que transforma. Restaure o equilíbrio do seu corpo com terapias personalizadas.</p>
-        <a href="#agendamento" class="btn btn-primary">Agende seu momento</a>
-      </div>
-      <div class="hero-image">
-        <img src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&w=800&q=80" alt="Malu Araújo aplicando massagem relaxante focada em bem-estar">
-        <span class="hero-badge">Sinta-se em casa</span>
-      </div>
-    </div>
-  </section>
-
-  <section class="sobre" id="sobre">
-    <div class="container sobre-grid">
-      <div class="sobre-text">
-        <span class="eyebrow">Prazer em cuidar de você</span>
-        <h2>Olá! Sou a Malu.</h2>
-        <p>Encontrei minha paixão em cuidar do corpo e da mente através do toque.</p>
-        <p>Para mim, a massoterapia vai muito além da técnica; é sobre conexão, cuidado e restauração do seu bem-estar. Cada sessão que realizo carrega minha dedicação para que você se sinta renovada(o).</p>
-        <p>Explore meus serviços, sinta-se em casa e agende seu momento. Vamos renovar suas energias!</p>
-        <p class="assinatura">Com carinho,<br><strong>Malu Araújo</strong></p>
-      </div>
-    </div>
-  </section>
-
-  <section class="servicos" id="servicos">
-    <div class="container">
-      <div class="section-head">
-        <span class="eyebrow">Nossos Serviços</span>
-        <h2>Massagens & Terapias</h2>
-        <p>Cada toque é um convite para desacelerar e se reconectar com você mesma.</p>
-      </div>
-
-      <div class="cards-grid">
-
-        <article class="card">
-          <div class="card-top">
-            <h3>Massagem Relaxante</h3>
-            <span class="price">R$ 100</span>
-          </div>
-          <p><strong>O Serviço:</strong> Movimentos suaves, contínuos e rítmicos, com óleos essenciais, para promover um relaxamento profundo do corpo e da mente.</p>
-          <p><strong>Ideal para:</strong> Adeus ao estresse, à ansiedade e à tensão do dia a dia. Perfeita para acalmar a mente e melhorar a qualidade do sono.</p>
-          <a href="#agendamento" class="btn btn-outline">Agendar</a>
-        </article>
-
-        <article class="card">
-          <div class="card-top">
-            <h3>Pedras Quentes</h3>
-            <span class="price">R$ 100</span>
-          </div>
-          <p><strong>O Serviço:</strong> Terapia com pedras vulcânicas aquecidas deslizando sobre o corpo. O calor penetra profundamente nos tecidos.</p>
-          <p><strong>Ideal para:</strong> Alivia dores crônicas, nós de tensão profunda e rigidez muscular. O calor relaxa e renova o corpo de forma imediata.</p>
-          <a href="#agendamento" class="btn btn-outline">Agendar</a>
-        </article>
-
-        <article class="card">
-          <div class="card-top">
-            <h3>Ventosaterapia</h3>
-            <span class="price">R$ 100</span>
-          </div>
-          <p><strong>O Serviço:</strong> Técnica com ventosas que criam sucção na pele, estimulando a circulação sanguínea e liberando toxinas acumuladas.</p>
-          <p><strong>Ideal para:</strong> Combate dores musculares intensas, má circulação e fadiga. Renova a energia e solta a musculatura travada.</p>
-          <a href="#agendamento" class="btn btn-outline">Agendar</a>
-        </article>
-
-        <article class="card">
-          <div class="card-top">
-            <h3>Drenagem Linfática</h3>
-            <span class="price">R$ 120</span>
-          </div>
-          <p><strong>O Serviço:</strong> Movimentos suaves e precisos que estimulam o sistema linfático, auxiliando o corpo a eliminar toxinas e líquidos retidos.</p>
-          <p><strong>Ideal para:</strong> Fim do inchaço, da retenção de líquidos e da sensação de peso. Excelente no pós-operatório e para trazer leveza.</p>
-          <a href="#agendamento" class="btn btn-outline">Agendar</a>
-        </article>
-
-        <article class="card">
-          <div class="card-top">
-            <h3>Reflexologia Podal</h3>
-            <span class="price">R$ 120</span>
-          </div>
-          <p><strong>O Serviço:</strong> Massagem focada nos pés que estimula pontos de pressão conectados a todos os órgãos e sistemas do corpo, promovendo equilíbrio.</p>
-          <p><strong>Ideal para:</strong> Reduz o estresse global, desequilíbrios do corpo e cansaço extremo. Traz aterramento e bem-estar.</p>
-          <a href="#agendamento" class="btn btn-outline">Agendar</a>
-        </article>
-
-        <article class="card">
-          <div class="card-top">
-            <h3>Spa Mãos e Pés</h3>
-            <span class="price">R$ 80</span>
-          </div>
-          <span class="tag">Spa</span>
-          <p><strong>O Serviço:</strong> Cuidado extremo das mãos e pés. Inclui escalda-pés, esfoliação, hidratação profunda e massagem para aliviar a fadiga.</p>
-          <p><strong>Ideal para:</strong> Alivia o cansaço das extremidades, melhora a textura da pele e proporciona um relaxamento reconfortante.</p>
-          <a href="#agendamento" class="btn btn-outline">Agendar</a>
-        </article>
-
-      </div>
-    </div>
-  </section>
-
-  <section class="pacotes" id="pacotes">
-    <div class="container">
-      <div class="section-head">
-        <span class="eyebrow">Cuide-se com regularidade</span>
-        <h2>Pacotes Promocionais</h2>
-        <p>O melhor investimento é cuidar de você. Constância é o segredo para resultados duradouros.</p>
-      </div>
-
-      <div class="pacotes-grid">
-        <div class="pacote-card">
-          <span class="pacote-sessoes">3 Sessões</span>
-          <p>Massagem Relaxante + Ventosa</p>
-          <span class="pacote-preco">R$ 250,00</span>
-        </div>
-        <div class="pacote-card">
-          <span class="pacote-sessoes">3 Sessões</span>
-          <p>Reflexologia ou Drenagem</p>
-          <span class="pacote-preco">R$ 300,00</span>
-        </div>
-        <div class="pacote-card">
-          <span class="pacote-sessoes">5 Sessões</span>
-          <p>Reflexologia ou Drenagem</p>
-          <span class="pacote-preco">R$ 450,00</span>
-        </div>
-        <div class="pacote-card">
-          <span class="pacote-sessoes">8 Sessões</span>
-          <p>Reflexologia ou Drenagem</p>
-          <span class="pacote-preco">R$ 700,00</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="agendamento" id="agendamento">
-    <div class="container">
-      <div class="section-head">
-        <span class="eyebrow">Reserve seu horário</span>
-        <h2>Agende sua Sessão</h2>
-        <p>Selecione o serviço e a data para visualizar os horários disponíveis (09:00 - 18:00).</p>
-      </div>
-
-      <form id="formAgendamento" class="form-agendamento">
-        <div class="form-row">
-          <label for="nome">Nome Completo</label>
-          <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required>
-        </div>
-
-        <div class="form-row">
-          <label for="whatsapp">Seu WhatsApp</label>
-          <input type="tel" id="whatsapp" name="whatsapp" placeholder="(11) 99999-9999" required>
-        </div>
-
-        <div class="form-row">
-          <label for="servico">Serviço Desejado</label>
-          <select id="servico" name="servico" required>
-            <option value="">Selecione uma opção...</option>
-            <option value="Massagem Relaxante">Massagem Relaxante - R$ 100</option>
-            <option value="Pedras Quentes">Pedras Quentes - R$ 100</option>
-            <option value="Ventosaterapia">Ventosaterapia - R$ 100</option>
-            <option value="Drenagem Linfática">Drenagem Linfática - R$ 120</option>
-            <option value="Reflexologia Podal">Reflexologia Podal - R$ 120</option>
-            <option value="Spa Mãos e Pés">Spa Mãos e Pés - R$ 80</option>
-          </select>
-        </div>
-
-        <div class="form-row">
-          <label for="data">Data da Sessão</label>
-          <input type="date" id="data" name="data" required>
-        </div>
-
-        <div class="form-row">
-          <label>Horários Disponíveis (09:00 - 18:00)</label>
-          <div id="horarios" class="horarios-grid">
-            <p class="horarios-msg">Selecione a data acima para exibir os horários.</p>
-          </div>
-          <input type="hidden" id="horarioSelecionado" name="horarioSelecionado" required>
-        </div>
-
-        <button type="submit" class="btn btn-primary" id="btnConfirmar">Confirmar Agendamento</button>
-        <p id="formMensagem" class="form-mensagem"></p>
-      </form>
-    </div>
-  </section>
-
-  <section class="contato" id="contato">
-    <div class="container contato-inner">
-      <h2>Seu bem-estar merece prioridade.</h2>
-      <p>Agende sua sessão diretamente pelo WhatsApp ou pelo formulário acima. Ficaremos felizes em esclarecer dúvidas e encontrar o melhor horário na sua rotina.</p>
-
-      <div class="contato-info">
-        <h4>Endereço de Atendimento</h4>
-        <p>São Paulo e Região<br><em>(Consulte áreas de cobertura)</em></p>
-      </div>
-
-      <div class="contato-botoes">
-        <a href="https://wa.me/5511977600003" class="btn btn-primary" target="_blank" rel="noopener">Falar com a Malu (11) 97760-0003</a>
-        <a href="https://www.instagram.com/malu.araujo_massoterapia/" class="btn btn-outline" target="_blank" rel="noopener">@malu.araujo_massoterapia</a>
-      </div>
-    </div>
-  </section>
-
-</main>
-
-<footer class="footer">
-  <div class="container footer-inner">
-    <ul class="footer-nav">
-      <li><a href="#home">Home</a></li>
-      <li><a href="#sobre">Sobre</a></li>
-      <li><a href="#servicos">Serviços</a></li>
-      <li><a href="#pacotes">Pacotes</a></li>
-      <li><a href="#agendamento">Agendar</a></li>
-      <li><a href="#contato">Contato</a></li>
-    </ul>
-    <h3>Malu Araújo</h3>
-    <p>Massoterapia & Bem-estar</p>
-    <p class="copyright">© 2026 Malu Araújo. Todos os direitos reservados.</p>
-  </div>
-</footer>
-
-<script src="script.js"></script>
+            // Close menu when clicking a link
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    nav.classList.remove('active');
+                    const icon = btn.querySelector('i');
+                    icon.classList.remove('fa-xmark');
+                    icon.classList.add('fa-bars');
+                });
+            });
+        });
+    </script>
 </body>
 </html>

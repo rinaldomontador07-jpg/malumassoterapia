@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
@@ -53,7 +53,7 @@
     <header>
         <div class="container header-container">
             <div class="logo">
-                <a href="#home">
+                <a onclick="fecharAgendamento()" style="cursor: pointer;">
                     <!-- SEO: Trocado H1 por DIV aqui para usar o H1 na frase principal da página -->
                     <div class="logo-text">MA</div>
                     <div class="logo-brand">
@@ -69,32 +69,41 @@
 
             <nav class="main-nav" id="main-nav">
                 <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#sobre">Sobre</a></li>
-                    <li><a href="#servicos">Serviços</a></li>
-                    <li><a href="#pacotes">Pacotes</a></li>
-                    <li><a href="#contato">Contato</a></li>
-                    <li class="mobile-only" style="margin-top: 10px;">
-                        <a href="https://wa.me/5511977600003" target="_blank" class="btn-primary">Agendar Sessão</a>
+                    <li><a onclick="fecharAgendamento(); document.getElementById('home').scrollIntoView();" style="cursor: pointer;">Home</a></li>
+                    <li><a onclick="fecharAgendamento(); document.getElementById('sobre').scrollIntoView();" style="cursor: pointer;">Sobre</a></li>
+                    <li><a onclick="fecharAgendamento(); document.getElementById('servicos').scrollIntoView();" style="cursor: pointer;">Serviços</a></li>
+                    <li><a onclick="fecharAgendamento(); document.getElementById('pacotes').scrollIntoView();" style="cursor: pointer;">Pacotes</a></li>
+                    <li><a onclick="fecharAgendamento(); document.getElementById('contato').scrollIntoView();" style="cursor: pointer;">Contato</a></li>
+                    <li class="mobile-only" style="margin-top: 15px; display: flex; flex-direction: column; gap: 10px;">
+                        <a href="https://wa.me/5511977600003" target="_blank" class="btn-whatsapp"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+                        <a onclick="abrirAgendamento()" class="btn-primary"><i class="fa-solid fa-calendar-check"></i> Agendar Online</a>
                     </li>
                 </ul>
             </nav>
-            <a href="https://wa.me/5511977600003" target="_blank" class="btn-primary desktop-only">Agendar Sessão</a>
+            <div class="desktop-only" style="display: flex; gap: 10px; align-items: center;">
+                <a href="https://wa.me/5511977600003" target="_blank" class="btn-whatsapp"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+                <a onclick="abrirAgendamento()" class="btn-primary" style="cursor: pointer;"><i class="fa-solid fa-calendar-check"></i> Agendar Online</a>
+            </div>
         </div>
     </header>
 
     <main class="page-content">
 
-        <!-- Hero Section -->
-        <section id="home" class="hero">
-            <div class="hero-overlay"></div>
-            <div class="container hero-content">
-                <!-- SEO: Único H1 da página contendo palavras-chave fortes -->
-                <h1 class="hero-title">Massoterapia e Bem-estar<br>em São Paulo</h1>
-                <p class="hero-subtitle">Cuidado que acolhe, toque que transforma. Restaure o equilíbrio<br>do seu corpo com terapias personalizadas.</p>
-                <a href="https://wa.me/5511977600003" target="_blank" class="btn-light">Agende seu momento</a>
-            </div>
-        </section>
+        <div id="conteudo-principal">
+
+            <!-- Hero Section -->
+            <section id="home" class="hero">
+                <div class="hero-overlay"></div>
+                <div class="container hero-content">
+                    <!-- SEO: Único H1 da página contendo palavras-chave fortes -->
+                    <h1 class="hero-title">Massoterapia e Bem-estar<br>em São Paulo</h1>
+                    <p class="hero-subtitle">Cuidado que acolhe, toque que transforma. Restaure o equilíbrio<br>do seu corpo com terapias personalizadas.</p>
+                    <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+                        <a href="https://wa.me/5511977600003" target="_blank" class="btn-whatsapp" style="padding: 15px 32px; font-size: 1rem;"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+                        <a onclick="abrirAgendamento()" class="btn-light" style="cursor: pointer;"><i class="fa-solid fa-calendar-check"></i> Agendar Online</a>
+                    </div>
+                </div>
+            </section>
 
         <!-- Sobre Section -->
         <section id="sobre" class="sobre">
@@ -136,7 +145,8 @@
                         </div>
                         <p class="service-desc"><strong>O Serviço:</strong> Movimentos suaves, contínuos e rítmicos, com óleos essenciais, para promover um relaxamento profundo do corpo e da mente.<br><br><strong>Ideal para:</strong> Adeus ao estresse, à ansiedade e à tensão do dia a dia. Perfeita para acalmar a mente e melhorar a qualidade do sono.</p>
                         <div class="service-footer">
-                            <a href="https://wa.me/5511977600003?text=Olá,%20gostaria%20de%20agendar%20uma%20Massagem%20Relaxante" target="_blank" class="btn-outline">Agendar <i class="fa-brands fa-whatsapp"></i></a>
+                            <a href="https://wa.me/5511977600003?text=Olá,%20gostaria%20de%20agendar%20uma%20Massagem%20Relaxante" target="_blank" class="btn-whatsapp"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+                            <a onclick="abrirAgendamento('Massagem Relaxante')" class="btn-outline"><i class="fa-solid fa-calendar-check"></i> Agendar Online</a>
                         </div>
                     </div>
 
@@ -147,7 +157,8 @@
                         </div>
                         <p class="service-desc"><strong>O Serviço:</strong> Terapia com pedras vulcânicas aquecidas deslizando sobre o corpo. O calor penetra profundamente nos tecidos.<br><br><strong>Ideal para:</strong> Alivia dores crônicas, nós de tensão profunda e rigidez muscular. O calor relaxa e renova o corpo de forma imediata.</p>
                         <div class="service-footer">
-                            <a href="https://wa.me/5511977600003?text=Olá,%20gostaria%20de%20agendar%20uma%20Massagem%20com%20Pedras%20Quentes" target="_blank" class="btn-outline">Agendar <i class="fa-brands fa-whatsapp"></i></a>
+                            <a href="https://wa.me/5511977600003?text=Olá,%20gostaria%20de%20agendar%20uma%20Massagem%20com%20Pedras%20Quentes" target="_blank" class="btn-whatsapp"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+                            <a onclick="abrirAgendamento('Pedras Quentes')" class="btn-outline"><i class="fa-solid fa-calendar-check"></i> Agendar Online</a>
                         </div>
                     </div>
 
@@ -158,7 +169,8 @@
                         </div>
                         <p class="service-desc"><strong>O Serviço:</strong> Técnica com ventosas que criam sucção na pele, estimulando a circulação sanguínea e liberando toxinas acumuladas.<br><br><strong>Ideal para:</strong> Combate dores musculares intensas, má circulação e fadiga. Renova a energia e solta a musculatura travada.</p>
                         <div class="service-footer">
-                            <a href="https://wa.me/5511977600003?text=Olá,%20gostaria%20de%20agendar%20uma%20sessão%20de%20Ventosaterapia" target="_blank" class="btn-outline">Agendar <i class="fa-brands fa-whatsapp"></i></a>
+                            <a href="https://wa.me/5511977600003?text=Olá,%20gostaria%20de%20agendar%20uma%20sessão%20de%20Ventosaterapia" target="_blank" class="btn-whatsapp"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+                            <a onclick="abrirAgendamento('Ventosaterapia')" class="btn-outline"><i class="fa-solid fa-calendar-check"></i> Agendar Online</a>
                         </div>
                     </div>
 
@@ -169,7 +181,8 @@
                         </div>
                         <p class="service-desc"><strong>O Serviço:</strong> Movimentos suaves e precisos que estimulam o sistema linfático, auxiliando o corpo a eliminar toxinas e líquidos retidos.<br><br><strong>Ideal para:</strong> Fim do inchaço, da retenção de líquidos e da sensação de peso. Excelente no pós-operatório e para trazer leveza.</p>
                         <div class="service-footer">
-                            <a href="https://wa.me/5511977600003?text=Olá,%20gostaria%20de%20agendar%20uma%20Drenagem%20Linfática" target="_blank" class="btn-outline">Agendar <i class="fa-brands fa-whatsapp"></i></a>
+                            <a href="https://wa.me/5511977600003?text=Olá,%20gostaria%20de%20agendar%20uma%20Drenagem%20Linfática" target="_blank" class="btn-whatsapp"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+                            <a onclick="abrirAgendamento('Drenagem Linfática')" class="btn-outline"><i class="fa-solid fa-calendar-check"></i> Agendar Online</a>
                         </div>
                     </div>
                     
@@ -180,7 +193,8 @@
                         </div>
                         <p class="service-desc"><strong>O Serviço:</strong> Massagem focada nos pés que estimula pontos de pressão conectados a todos os órgãos e sistemas do corpo, promovendo equilíbrio.<br><br><strong>Ideal para:</strong> Reduz o estresse global, desequilíbrios do corpo e cansaço extremo. Traz aterramento e bem-estar.</p>
                         <div class="service-footer">
-                            <a href="https://wa.me/5511977600003?text=Olá,%20gostaria%20de%20agendar%20uma%20Reflexologia%20Podal" target="_blank" class="btn-outline">Agendar <i class="fa-brands fa-whatsapp"></i></a>
+                            <a href="https://wa.me/5511977600003?text=Olá,%20gostaria%20de%20agendar%20uma%20Reflexologia%20Podal" target="_blank" class="btn-whatsapp"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+                            <a onclick="abrirAgendamento('Reflexologia Podal')" class="btn-outline"><i class="fa-solid fa-calendar-check"></i> Agendar Online</a>
                         </div>
                     </div>
                     
@@ -192,7 +206,8 @@
                         </div>
                         <p class="service-desc"><strong>O Serviço:</strong> Cuidado extremo das mãos e pés. Inclui escalda-pés, esfoliação, hidratação profunda e massagem para aliviar a fadiga.<br><br><strong>Ideal para:</strong> Alivia o cansaço das extremidades, melhora a textura da pele e proporciona um relaxamento reconfortante.</p>
                         <div class="service-footer">
-                            <a href="https://wa.me/5511977600003?text=Olá,%20gostaria%20de%20agendar%20um%20Spa%20Mãos%20e%20Pés" target="_blank" class="btn-outline">Agendar <i class="fa-brands fa-whatsapp"></i></a>
+                            <a href="https://wa.me/5511977600003?text=Olá,%20gostaria%20de%20agendar%20um%20Spa%20Mãos%20e%20Pés" target="_blank" class="btn-whatsapp"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+                            <a onclick="abrirAgendamento('Spa Mãos e Pés')" class="btn-outline"><i class="fa-solid fa-calendar-check"></i> Agendar Online</a>
                         </div>
                     </div>
                 </div>
@@ -241,6 +256,11 @@
                         <div class="pkg-price">R$ 700,00</div>
                     </div>
                 </div>
+
+                <div style="margin-top: 35px; display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
+                    <a href="https://wa.me/5511977600003?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20os%20pacotes%20promocionais" target="_blank" class="btn-whatsapp"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+                    <a onclick="abrirAgendamento()" class="btn-primary" style="cursor: pointer;"><i class="fa-solid fa-calendar-check"></i> Agendar Online</a>
+                </div>
             </div>
         </section>
 
@@ -251,7 +271,7 @@
                     <div class="contato-info" style="text-align: center;">
                         <i class="fa-solid fa-spa contact-icon"></i>
                         <h2>Seu bem-estar merece prioridade.</h2>
-                        <p>Agende sua sessão diretamente pelo WhatsApp. Ficaremos felizes em esclarecer dúvidas e encontrar o melhor horário na sua rotina.</p>
+                        <p>Agende sua sessão diretamente pelo WhatsApp ou pelo nosso agendamento online. Ficaremos felizes em esclarecer dúvidas e encontrar o melhor horário na sua rotina.</p>
                         
                         <div style="display: flex; flex-direction: column; align-items: center; gap: 20px; margin-bottom: 35px; margin-top: 30px;">
                             <div class="info-item" style="margin-bottom: 0; text-align: center; width: 100%;">
@@ -263,15 +283,73 @@
                             </div>
                         </div>
 
-                        <div style="max-width: 400px; margin: 0 auto;">
-                            <a href="https://wa.me/5511977600003" target="_blank" class="btn-primary btn-full">
+                        <div style="max-width: 420px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px;">
+                            <a href="https://wa.me/5511977600003" target="_blank" class="btn-whatsapp btn-full">
                                 <i class="fa-brands fa-whatsapp"></i> Falar com a Malu (11) 97760-0003
+                            </a>
+                            <a onclick="abrirAgendamento()" class="btn-primary btn-full" style="cursor: pointer;">
+                                <i class="fa-solid fa-calendar-check"></i> Agendar Online pelo Site
                             </a>
                             <a href="https://www.instagram.com/malu.araujo_massoterapia/" target="_blank" class="btn-light btn-full" style="border: 2px solid var(--primary-color);">
                                 <i class="fa-brands fa-instagram"></i> @malu.araujo_massoterapia
                             </a>
                         </div>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        </div>
+
+        <!-- PÁGINA DE AGENDAMENTO EXCLUSIVA (ESTILO ORIGINAL) -->
+        <section id="agendamento" class="agendamento">
+            <div class="container">
+                <div class="section-header">
+                    <span class="subtitle">RESERVE SEU HORÁRIO</span>
+                    <h2>Agende sua Sessão</h2>
+                    <p>Selecione o serviço e a data para visualizar os horários disponíveis (09:00 - 18:00).</p>
+                </div>
+                <div class="agendamento-container">
+                    <form id="form-agendamento">
+                        <div class="campo">
+                            <label for="nome">Nome Completo</label>
+                            <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required>
+                        </div>
+                        <div class="campo">
+                            <label for="whatsapp">Seu WhatsApp</label>
+                            <input type="tel" id="whatsapp" name="whatsapp" placeholder="(11) 99999-9999" required>
+                        </div>
+                        <div class="campo">
+                            <label for="servico">Serviço Desejado</label>
+                            <select id="servico" name="servico" required onchange="atualizarHorariosDisponiveis()">
+                                <option value="">Selecione uma opção...</option>
+                                <option value="Massagem Relaxante">Massagem Relaxante - R$ 100</option>
+                                <option value="Pedras Quentes">Pedras Quentes - R$ 100</option>
+                                <option value="Ventosaterapia">Ventosaterapia - R$ 100</option>
+                                <option value="Drenagem Linfática">Drenagem Linfática - R$ 120</option>
+                                <option value="Reflexologia Podal">Reflexologia Podal - R$ 120</option>
+                                <option value="Spa Mãos e Pés">Spa Mãos e Pés - R$ 80</option>
+                            </select>
+                        </div>
+                        <div class="campo">
+                            <label for="data">Data da Sessão</label>
+                            <input type="date" id="data" name="data" required onchange="atualizarHorariosDisponiveis()">
+                        </div>
+                        
+                        <!-- SELETOR DE HORÁRIOS INTERATIVO COM LEITURA DA PLANILHA -->
+                        <div class="campo">
+                            <label>Horários Disponíveis (09:00 - 18:00)</label>
+                            <div id="filtro-aviso" class="aviso-filtro">Selecione o serviço e a data acima para exibir os horários.</div>
+                            <div id="grade-horarios" class="horarios-grid" style="display: none;"></div>
+                            <input type="hidden" id="horario-selecionado" name="horario" required>
+                        </div>
+
+                        <!-- MENSAGEM DE ERRO DISCRETA -->
+                        <div id="msg-erro" style="color: #d9534f; font-size: 0.9rem; margin-bottom: 15px; display: none; text-align: center; font-weight: 600;"></div>
+
+                        <button type="submit" id="btn-submit"><i class="fa-solid fa-check"></i> Confirmar Agendamento</button>
+                        <a onclick="fecharAgendamento()" class="btn-voltar"><i class="fa-solid fa-arrow-left"></i> Voltar para o site</a>
+                    </form>
                 </div>
             </div>
         </section>
@@ -283,11 +361,11 @@
         <div class="container">
             <div class="footer-links">
                 <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#sobre">Sobre</a></li>
-                    <li><a href="#servicos">Serviços</a></li>
-                    <li><a href="#pacotes">Pacotes</a></li>
-                    <li><a href="#contato">Contato</a></li>
+                    <li><a onclick="fecharAgendamento(); document.getElementById('home').scrollIntoView();" style="cursor: pointer;">Home</a></li>
+                    <li><a onclick="fecharAgendamento(); document.getElementById('sobre').scrollIntoView();" style="cursor: pointer;">Sobre</a></li>
+                    <li><a onclick="fecharAgendamento(); document.getElementById('servicos').scrollIntoView();" style="cursor: pointer;">Serviços</a></li>
+                    <li><a onclick="fecharAgendamento(); document.getElementById('pacotes').scrollIntoView();" style="cursor: pointer;">Pacotes</a></li>
+                    <li><a onclick="fecharAgendamento(); document.getElementById('contato').scrollIntoView();" style="cursor: pointer;">Contato</a></li>
                 </ul>
             </div>
             
@@ -308,12 +386,15 @@
         </div>
     </footer>
 
-    <!-- Floating WhatsApp -->
-    <a href="https://wa.me/5511977600003" target="_blank" class="whatsapp-float" aria-label="Fale conosco no WhatsApp">
+    <!-- BOTÕES FLUTUANTES: AGENDAR ONLINE E WHATSAPP -->
+    <a onclick="abrirAgendamento()" class="agendar-float" title="Agendar Horário Online">
+        <i class="fa-solid fa-calendar-check"></i> <span>Agendar Online</span>
+    </a>
+    <a href="https://wa.me/5511977600003" target="_blank" class="whatsapp-float" aria-label="Fale conosco no WhatsApp" title="Falar no WhatsApp">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
 
-    <!-- Scripts (Menu Mobile & Smooth Scroll behavior fix for fixed header) -->
+    <!-- Scripts (Menu Mobile, Agendamento e Integração com Planilha/AppSheet) -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const btn = document.getElementById('mobile-menu-btn');
@@ -338,9 +419,220 @@
                 link.addEventListener('click', () => {
                     nav.classList.remove('active');
                     const icon = btn.querySelector('i');
-                    icon.classList.remove('fa-xmark');
-                    icon.classList.add('fa-bars');
+                    if (icon) {
+                        icon.classList.remove('fa-xmark');
+                        icon.classList.add('fa-bars');
+                    }
                 });
+            });
+
+            // Data mínima para hoje
+            const inputData = document.getElementById('data');
+            if(inputData) {
+                const hoje = new Date().toISOString().split('T')[0];
+                inputData.min = hoje;
+            }
+
+            // Máscara amigável de WhatsApp
+            const inputWhatsapp = document.getElementById('whatsapp');
+            if (inputWhatsapp) {
+                inputWhatsapp.addEventListener('input', function(e) {
+                    let v = this.value.replace(/\D/g, '');
+                    if (v.length > 11) v = v.slice(0, 11);
+                    if (v.length > 6) {
+                        this.value = `(${v.slice(0, 2)}) ${v.slice(2, 7)}-${v.slice(7)}`;
+                    } else if (v.length > 2) {
+                        this.value = `(${v.slice(0, 2)}) ${v.slice(2)}`;
+                    } else if (v.length > 0) {
+                        this.value = `(${v}`;
+                    } else {
+                        this.value = '';
+                    }
+                });
+            }
+        });
+
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbxvDPHi4vhW9bo53Nl9tZuD4gFEg_UmRvvOau5X2FsyrRcwLNYJycjZvUjn7VKpzkLP/exec';
+
+        // Converte qualquer formato ("09:00:00", "09:00", "9:00") para "09:00"
+        function normalizarHora(horaStr) {
+            if (!horaStr) return '';
+            const match = String(horaStr).match(/(\d{1,2}):(\d{2})/);
+            if (match) {
+                return `${match[1].padStart(2, '0')}:${match[2]}`;
+            }
+            return String(horaStr).trim();
+        }
+
+        // Função que consulta a planilha em tempo real e desenha os horários bloqueados
+        function atualizarHorariosDisponiveis() {
+            const selectServico = document.getElementById('servico');
+            const inputData = document.getElementById('data');
+            const gradeHorarios = document.getElementById('grade-horarios');
+            const avisoFiltro = document.getElementById('filtro-aviso');
+            const inputHorarioSelecionado = document.getElementById('horario-selecionado');
+
+            const servicoVal = selectServico.value;
+            const dataVal = inputData.value;
+
+            if (!servicoVal || !dataVal) {
+                avisoFiltro.style.display = 'block';
+                avisoFiltro.textContent = 'Selecione o serviço e a data acima para exibir os horários.';
+                gradeHorarios.style.display = 'none';
+                gradeHorarios.innerHTML = '';
+                inputHorarioSelecionado.value = '';
+                return;
+            }
+
+            avisoFiltro.style.display = 'block';
+            avisoFiltro.textContent = 'Consultando horários disponíveis na agenda...';
+            gradeHorarios.style.display = 'none';
+            inputHorarioSelecionado.value = '';
+
+            fetch(`${scriptURL}?data=${dataVal}`)
+                .then(response => response.json())
+                .then(dadosRetornados => {
+                    avisoFiltro.style.display = 'none';
+                    gradeHorarios.style.display = 'grid';
+                    gradeHorarios.innerHTML = '';
+
+                    let horariosOcupados = [];
+                    if (Array.isArray(dadosRetornados)) {
+                        horariosOcupados = dadosRetornados
+                            .filter(item => {
+                                if (typeof item === 'object' && item !== null) {
+                                    const statusStr = String(item.Status || '').trim().toUpperCase();
+                                    return statusStr === 'OK' || statusStr === 'CONFIRMADO' || statusStr === 'APROVADO' || statusStr === 'SIM' || statusStr === 'PENDENTE' || statusStr === '';
+                                }
+                                return true;
+                            })
+                            .map(item => {
+                                const h = typeof item === 'object' && item !== null ? item.Horario : item;
+                                return normalizarHora(h);
+                            });
+                    }
+
+                    const horariosPossiveis = [
+                        "09:00", "09:30", "10:00", "10:30", "11:00", "11:30",
+                        "12:00", "12:30", "13:00", "13:30", "14:00", "14:30",
+                        "15:00", "15:30", "16:00", "16:30", "17:00", "17:30", "18:00"
+                    ];
+
+                    horariosPossiveis.forEach((h) => {
+                        const slot = document.createElement('div');
+                        slot.className = 'horario-slot';
+                        slot.textContent = h;
+
+                        // Se o horário estiver na lista de ocupados, desativa o slot imediatamente
+                        if (horariosOcupados.includes(h)) {
+                            slot.classList.add('booked');
+                            slot.title = 'Horário já reservado na agenda';
+                        } else {
+                            slot.addEventListener('click', function() {
+                                document.querySelectorAll('.horario-slot').forEach(s => s.classList.remove('selected'));
+                                slot.classList.add('selected');
+                                inputHorarioSelecionado.value = h;
+                                document.getElementById('msg-erro').style.display = 'none';
+                            });
+                        }
+
+                        gradeHorarios.appendChild(slot);
+                    });
+                })
+                .catch(error => {
+                    console.warn('Erro ao buscar horários:', error);
+                    avisoFiltro.textContent = 'Erro ao carregar horários. Tente novamente.';
+                });
+        }
+
+        function abrirAgendamento(servico = '') {
+            document.getElementById('conteudo-principal').style.display = 'none';
+            document.getElementById('agendamento').style.display = 'block';
+            window.scrollTo(0, 0);
+            
+            if (servico) {
+                document.getElementById('servico').value = servico;
+                atualizarHorariosDisponiveis();
+            }
+            
+            const nav = document.getElementById('main-nav');
+            if (nav) nav.classList.remove('active');
+        }
+
+        function fecharAgendamento() {
+            document.getElementById('conteudo-principal').style.display = 'block';
+            document.getElementById('agendamento').style.display = 'none';
+            window.scrollTo(0, 0);
+            const nav = document.getElementById('main-nav');
+            if (nav) nav.classList.remove('active');
+        }
+
+        // Envio do formulário de agendamento
+        document.getElementById('form-agendamento').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const msgErro = document.getElementById('msg-erro');
+            msgErro.style.display = 'none';
+            
+            const horarioEscolhido = document.getElementById('horario-selecionado').value;
+            if (!horarioEscolhido) {
+                msgErro.innerText = 'Por favor, selecione um horário na grade acima antes de confirmar.';
+                msgErro.style.display = 'block';
+                return;
+            }
+
+            const btnSubmit = document.getElementById('btn-submit');
+            btnSubmit.disabled = true;
+            btnSubmit.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Confirmando...';
+
+            const nome = document.getElementById('nome').value.trim();
+            const whatsapp = document.getElementById('whatsapp').value.trim();
+            const data = document.getElementById('data').value;
+            const servico = document.getElementById('servico').value;
+
+            const payload = {
+                "ID": "AGD-" + Date.now(),
+                "Data": data,
+                "Horario": horarioEscolhido,
+                "Nome": nome,
+                "WhatsApp": whatsapp,
+                "Servico": servico,
+                "Status": "Pendente"
+            };
+
+            const partesData = data.split("-");
+            const dataBR = partesData.length === 3 ? `${partesData[2]}/${partesData[1]}/${partesData[0]}` : data;
+
+            fetch(scriptURL, { 
+                method: 'POST', 
+                headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+                body: JSON.stringify(payload)
+            })
+            .then(response => {
+                this.reset();
+                document.getElementById('grade-horarios').style.display = 'none';
+                document.getElementById('filtro-aviso').style.display = 'block';
+                btnSubmit.disabled = false;
+                btnSubmit.innerHTML = '<i class="fa-solid fa-check"></i> Confirmar Agendamento';
+                
+                const msg = `Olá Malu! Acabei de agendar pelo site:
+*Nome:* ${nome}
+*Serviço:* ${servico}
+*Data:* ${dataBR}
+*Horário:* ${horarioEscolhido}`;
+                window.open(`https://wa.me/5511977600003?text=${encodeURIComponent(msg)}`, '_blank');
+                fecharAgendamento();
+            })
+            .catch(error => {
+                this.reset();
+                document.getElementById('grade-horarios').style.display = 'none';
+                document.getElementById('filtro-aviso').style.display = 'block';
+                btnSubmit.disabled = false;
+                btnSubmit.innerHTML = '<i class="fa-solid fa-check"></i> Confirmar Agendamento';
+                
+                const msg = `Olá Malu! Tentei agendar pelo site. Meu nome é ${nome}`;
+                window.open(`https://wa.me/5511977600003?text=${encodeURIComponent(msg)}`, '_blank');
+                fecharAgendamento();
             });
         });
     </script>

@@ -1,4 +1,4 @@
-﻿/* CSS RESET & VARIABLES - MALU ARAÚJO PALETTE */
+/* CSS RESET & VARIABLES - MALU ARAÚJO PALETTE */
 :root {
     --primary-color: #4a2b50; /* Deep Purple */
     --primary-hover: #6a4073;
@@ -182,6 +182,30 @@ h3 {
 .btn-outline:hover {
     background-color: var(--primary-color);
     color: white;
+}
+
+.btn-whatsapp {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background-color: var(--whatsapp);
+    color: white;
+    padding: 8px 20px;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-whatsapp:hover {
+    background-color: #1ebc57;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.35);
 }
 
 .btn-full {
@@ -425,6 +449,10 @@ nav a:hover {
 
 .service-footer {
     text-align: center;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
 }
 
 /* PACOTES */
@@ -561,7 +589,159 @@ footer {
     font-size: 0.85rem;
 }
 
-/* FLOATING WHATSAPP */
+/* AGENDAMENTO */
+.agendamento {
+    padding: 80px 0;
+    background-color: var(--bg-main);
+    display: none;
+}
+.agendamento-container {
+    max-width: 620px;
+    margin: 0 auto;
+    padding: 40px;
+    background: var(--white);
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(74, 43, 80, 0.08);
+    border: 1px solid #e0d5e5;
+}
+.campo {
+    margin-bottom: 22px;
+    text-align: left;
+}
+.campo label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--primary-color);
+    font-size: 0.95rem;
+}
+.campo input, .campo select {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid #e0d5e5;
+    border-radius: 10px;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    color: var(--text-dark);
+    background: var(--bg-main);
+    transition: border-color 0.2s ease;
+}
+.campo input:focus, .campo select:focus {
+    outline: none;
+    border-color: var(--accent);
+}
+
+/* GRADE DE HORÁRIOS DINÂMICOS */
+.horarios-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-top: 8px;
+}
+.horario-slot {
+    padding: 12px 6px;
+    text-align: center;
+    border: 1px solid #e0d5e5;
+    border-radius: 10px;
+    background-color: #faf5f8;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--primary-color);
+    transition: all 0.2s ease;
+    user-select: none;
+}
+.horario-slot:hover:not(.booked) {
+    border-color: var(--accent);
+    background-color: #f2e9f5;
+    transform: translateY(-1px);
+}
+.horario-slot.selected {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+    box-shadow: 0 4px 10px rgba(74, 43, 80, 0.25);
+}
+.horario-slot.booked {
+    background-color: #e9ecef;
+    color: #adb5bd;
+    border-color: #dee2e6;
+    text-decoration: line-through;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+.aviso-filtro {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    margin-bottom: 10px;
+    font-style: italic;
+}
+
+#btn-submit {
+    width: 100%;
+    padding: 16px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-size: 1.05rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+    font-family: var(--font-body);
+    margin-bottom: 15px;
+    box-shadow: 0 5px 15px rgba(74, 43, 80, 0.2);
+}
+#btn-submit:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(74, 43, 80, 0.3);
+}
+#btn-submit:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
+}
+.btn-voltar {
+    display: block;
+    text-align: center;
+    color: var(--text-light);
+    font-weight: 500;
+    cursor: pointer;
+    text-decoration: underline;
+    font-size: 0.95rem;
+}
+.btn-voltar:hover {
+    color: var(--primary-color);
+}
+
+/* BOTÕES FLUTUANTES */
+.agendar-float {
+    position: fixed;
+    bottom: 100px;
+    right: 30px;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 14px 22px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    box-shadow: 0 6px 20px rgba(74, 43, 80, 0.35);
+    z-index: 1000;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid white;
+    text-decoration: none;
+}
+.agendar-float:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 8px 25px rgba(74, 43, 80, 0.45);
+    color: white;
+}
 .whatsapp-float {
     position: fixed;
     bottom: 30px;
@@ -578,10 +758,11 @@ footer {
     box-shadow: 0 4px 10px rgba(0,0,0,0.2);
     z-index: 1000;
     transition: transform 0.3s;
+    text-decoration: none;
 }
-
 .whatsapp-float:hover {
     transform: scale(1.1);
+    color: white;
 }
 
 /* RESPONSIVE */
@@ -607,7 +788,7 @@ footer {
         display: block;
     }
     .desktop-only {
-        display: none;
+        display: none !important;
     }
     .mobile-only {
         display: block;
@@ -635,7 +816,7 @@ footer {
         font-size: 1.2rem;
     }
     .hero-title {
-        font-size: 2.5rem;
+        font-size: 2.3rem;
     }
     .services-grid {
         grid-template-columns: 1fr;
@@ -644,6 +825,25 @@ footer {
         flex-direction: column;
         text-align: center;
         gap: 10px;
+    }
+    .agendamento-container {
+        padding: 25px 20px;
+    }
+    .horarios-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .agendar-float {
+        bottom: 95px;
+        right: 20px;
+        font-size: 0.85rem;
+        padding: 10px 16px;
+    }
+    .whatsapp-float {
+        bottom: 25px;
+        right: 20px;
+        width: 54px;
+        height: 54px;
+        font-size: 1.8rem;
     }
     /* Mobile Footer */
     .footer-links ul {

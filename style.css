@@ -62,6 +62,14 @@ a {
     gap: 12px;
 }
 
+.logo-img {
+    width: 48px;
+    height: 48px;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0 2px 8px rgba(74, 43, 80, 0.15);
+}
+
 .logo-text {
     font-size: 2.2rem !important;
     color: var(--accent) !important;
@@ -213,6 +221,35 @@ h3 {
     text-align: center;
     width: 100%;
     margin-top: 15px;
+}
+
+.btn-google-review {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background-color: var(--white);
+    color: var(--primary-color);
+    border: 2px solid #e0d5e5;
+    padding: 12px 24px;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+}
+.btn-google-review:hover {
+    border-color: #4285F4;
+    color: #4285F4;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(66, 133, 244, 0.15);
+}
+.btn-google-review .stars {
+    color: #fbbc04;
+    font-size: 1rem;
+    letter-spacing: 2px;
 }
 
 /* HEADER */

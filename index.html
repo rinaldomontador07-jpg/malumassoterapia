@@ -464,6 +464,12 @@
 
         const scriptURL = 'https://script.google.com/macros/s/AKfycbxvDPHi4vhW9bo53Nl9tZuD4gFEg_UmRvvOau5X2FsyrRcwLNYJycjZvUjn7VKpzkLP/exec';
 
+        const horariosPossiveis = [
+            "09:00", "09:30", "10:00", "10:30", "11:00", "11:30",
+            "12:00", "12:30", "13:00", "13:30", "14:00", "14:30",
+            "15:00", "15:30", "16:00", "16:30", "17:00", "17:30", "18:00"
+        ];
+
         // Converte qualquer formato ("09:00:00", "09:00", "9:00") para "09:00"
         function normalizarHora(horaStr) {
             if (!horaStr) return '';
@@ -472,6 +478,75 @@
                 return `${match[1].padStart(2, '0')}:${match[2]}`;
             }
             return String(horaStr).trim();
+        }
+
+        // Converte string de horário para minutos (ex: "09:30" -> 570)
+        function horaParaMinutos(str) {
+            if (!str) return -1;
+            const match = String(str).match(/(\d{1,2})(?::(\d{2})|h(\d{2})?|h)?/i);
+            if (!match) return -1;
+            const h = parseInt(match[1], 10);
+            const m = parseInt(match[2] || match[3] || '0', 10);
+            if (isNaN(h) || isNaN(m)) return -1;
+            return h * 60 + m;
+        }
+
+        // Expande horários ocupados suportando intervalos (ex: "09:00 - 10:30" ou coluna Término)
+        function expandirHorariosOcupados(dados) {
+            const ocupados = new Set();
+            if (!dados) return [];
+            const lista = Array.isArray(dados) ? dados : [dados];
+
+            lista.forEach((item) => {
+                if (!item) return;
+
+                if (typeof item !== 'object') {
+                    const h = normalizarHora(item);
+                    if (h) ocupados.add(h);
+                    return;
+                }
+
+                const statusStr = String(item.Status || '').trim().toUpperCase();
+                // Bloqueia APENAS quando o status for confirmado com OK (ou Confirmado / Aprovado / Sim)
+                // Se estiver Pendente, continua liberado para outros clientes
+                const statusValido = statusStr === 'OK' || statusStr === 'CONFIRMADO' || statusStr === 'APROVADO' || statusStr === 'SIM';
+                if (!statusValido || statusStr === 'PENDENTE') return;
+
+                const horarioStr = String(item.Horario || '').trim();
+                const terminoStr = String(item.Termino || item.Fim || item.Horario_Fim || '').trim();
+
+                let inicioMin = -1;
+                let fimMin = -1;
+
+                // 1. Verifica se há intervalo explícito na célula de Horário (ex: "09:00 - 10:30" ou "09:00 às 10:30")
+                const rangeMatch = horarioStr.match(/(\d{1,2}(?::\d{2}|h\d{2}|h)?)\s*(?:-|–|—|às|as|até|ate|a)\s*(\d{1,2}(?::\d{2}|h\d{2}|h)?)/i);
+                if (rangeMatch) {
+                    inicioMin = horaParaMinutos(rangeMatch[1]);
+                    fimMin = horaParaMinutos(rangeMatch[2]);
+                } else if (terminoStr) {
+                    // 2. Se houver coluna de Término preenchida na planilha
+                    inicioMin = horaParaMinutos(horarioStr);
+                    fimMin = horaParaMinutos(terminoStr);
+                } else {
+                    // 3. Apenas horário inicial (ex: "09:00")
+                    inicioMin = horaParaMinutos(horarioStr);
+                }
+
+                if (inicioMin >= 0 && fimMin > inicioMin) {
+                    // Bloqueia todos os slots da grade que caiam no intervalo [inicioMin, fimMin)
+                    horariosPossiveis.forEach((slot) => {
+                        const slotMin = horaParaMinutos(slot);
+                        if (slotMin >= inicioMin && slotMin < fimMin) {
+                            ocupados.add(slot);
+                        }
+                    });
+                } else if (inicioMin >= 0) {
+                    const h = normalizarHora(horarioStr);
+                    if (h) ocupados.add(h);
+                }
+            });
+
+            return Array.from(ocupados);
         }
 
         // Função que consulta a planilha em tempo real e desenha os horários bloqueados
@@ -506,27 +581,7 @@
                     gradeHorarios.style.display = 'grid';
                     gradeHorarios.innerHTML = '';
 
-                    let horariosOcupados = [];
-                    if (Array.isArray(dadosRetornados)) {
-                        horariosOcupados = dadosRetornados
-                            .filter(item => {
-                                if (typeof item === 'object' && item !== null) {
-                                    const statusStr = String(item.Status || '').trim().toUpperCase();
-                                    return statusStr === 'OK' || statusStr === 'CONFIRMADO' || statusStr === 'APROVADO' || statusStr === 'SIM' || statusStr === 'PENDENTE' || statusStr === '';
-                                }
-                                return true;
-                            })
-                            .map(item => {
-                                const h = typeof item === 'object' && item !== null ? item.Horario : item;
-                                return normalizarHora(h);
-                            });
-                    }
-
-                    const horariosPossiveis = [
-                        "09:00", "09:30", "10:00", "10:30", "11:00", "11:30",
-                        "12:00", "12:30", "13:00", "13:30", "14:00", "14:30",
-                        "15:00", "15:30", "16:00", "16:30", "17:00", "17:30", "18:00"
-                    ];
+                    const horariosOcupados = expandirHorariosOcupados(dadosRetornados);
 
                     horariosPossiveis.forEach((h) => {
                         const slot = document.createElement('div');
